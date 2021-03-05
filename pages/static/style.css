@@ -1,0 +1,16 @@
+.col-lg-6{
+    grid-template-columns:repeat(4, 1fr);
+    display: grid;
+}
+
+.card-img-top{
+    width: 318px;
+    height: 318px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 15px;
+}
+
+.card{
+    width: 20rem;
+}

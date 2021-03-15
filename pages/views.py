@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Product
+from .models import Stats
 from . import engine
+from django.db.models import F
 
 def my_view(request):
     Product.objects.all().delete()
@@ -11,6 +13,13 @@ def my_view(request):
     text = ""
     if 'search' in request.GET and request.GET['search']:
         search = request.GET['search']
+        try:
+            obj = Stats.objects.get(querystring=search)
+            #Stats.objects.filter(querystring__in=search).update(amount=F('amount')+1)
+            obj.amount += 1
+            obj.save()
+        except Stats.DoesNotExist:
+            Stats.objects.create(querystring=search, amount=1)
         query = engine.driverwork(search)
         error = engine.errorCheck(search)
         link = 'http://127.0.0.1:8000/?search='+search

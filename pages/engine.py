@@ -17,7 +17,7 @@ def errorCheck(querystr):
         querytemp = dictionary.suggest(querystr)
         print(querytemp)
         responsedef.append("Возможно, Вы искали ")
-        responsedef.append(querytemp)
+        responsedef.append(querytemp[0])
         responsedef.append("?")
         return(responsedef)
 

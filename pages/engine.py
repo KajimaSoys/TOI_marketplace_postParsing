@@ -15,7 +15,7 @@ def errorCheck(querystr):
         return(responsedef)
     else:
         querytemp = dictionary.suggest(querystr)
-        print(querytemp)
+        #print(querytemp)
         responsedef.append("Возможно, Вы искали ")
         responsedef.append(querytemp[0])
         responsedef.append("?")
@@ -41,7 +41,7 @@ def parsing(querystr, driver, page):
     div = WebDriverWait(driver, 120).until(
         EC.presence_of_element_located((By.CLASS_NAME, "a0c6.a0c9.a0c8"))
     )
-    time.sleep(2)
+    time.sleep(1)
     div = driver.find_elements_by_class_name('a0c6.a0c9.a0c8')
     for item in div:
         data = []

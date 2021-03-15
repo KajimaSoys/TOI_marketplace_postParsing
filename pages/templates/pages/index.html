@@ -21,7 +21,7 @@
                 <div class="col-lg-6 mb-4">
                     {% for element in elements %}
                         <div class="card">
-                            <img src="{{ element.img }}" class="card-img-top" alt="{{ element.title }}" style="width: 318px;height: 318px;max-width: 100%;max-height: 100%;padding: 15px;">
+                            <img src="{{ element.img }}" class="card-img-top" alt="{{ element.title }}" style="width: 318px;height: auto;max-width: 100%;max-height: 100%;padding: 15px;">
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="{{ element.url }}" target="_blank">{{ element.title }}</a></li>
@@ -35,7 +35,7 @@
         </div>
 
         <form method="GET" class="d-flex">
-            <nav aria-label="Search results pages">
+            <nav aria-label="Search results pages" style="margin: 0 auto;">
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Назад</a>

@@ -14,12 +14,14 @@
                 </form>
             </div>
         </nav>
-
+        <div style="margin-left: 136px;margin-bottom: 20px;margin-top: 20px;">
+            {{ first }}<b><a href="{{ link }}">{{ text }}</a></b>{{ last }}
+        </div>
         <div class="container">
                 <div class="col-lg-6 mb-4">
                     {% for element in elements %}
                         <div class="card">
-                            <img src="{{ element.img }}" class="card-img-top" alt="{{ element.title }}">
+                            <img src="{{ element.img }}" class="card-img-top" alt="{{ element.title }}" style="width: 318px;height: 318px;max-width: 100%;max-height: 100%;padding: 15px;">
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><a href="{{ element.url }}" target="_blank">{{ element.title }}</a></li>
